@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Montserrat', sans-serif !important;
+    text-decoration: none;
+}
+a{
+    color:inherit;
+}
+.mainPage{
+    display: flex;
+}
+header{
+    height: 110px;
+    padding: 41px 0;
+}
+.container{
+    width:1440px;
+    margin:0 auto;
+    padding: 0 131px;
+    position: relative;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    color:#1C2A39;
+    font-family: Montserrat , sans-serif;
+
+}
+
+header .container .logo{
+    font-weight: bold;
+    font-size: 28px;
+}
+.navigation{
+    padding: 8px 0;
+}
+header .container .navigation .navigationHeaderList{
+    font-size: 15px;
+    display: flex;
+    list-style: none;
+    column-gap: 20px;
+    font-family: Montserrat , sans-serif;
+    text-transform: uppercase;
+    color:#5C6A79;
+    font-weight: bold;
+
+}
+
+.userNavList{
+    font-size: 15px;
+    display: flex;
+    list-style: none;
+    column-gap: 20px;
+    font-family: Montserrat , sans-serif;
+    text-transform: uppercase;
+    color:#5C6A79;
+    font-weight: bold;
+}
+.userAuth{
+    padding: 8px 0;
+    font-size: 15px;
+    display: flex;
+    list-style: none;
+    column-gap: 20px;
+    font-family: Montserrat , sans-serif;
+    text-transform: uppercase;
+    color:#5C6A79;
+    font-weight: bold;
+}
+.logInForm{
+    display: flex;
+    flex-direction: column;
+    column-gap: 15px;
+}
+.formInput{
+    margin-top:15px;
+    width: 50%;
+    height: 40px;
+    font-size: 25px;
+}
+.submitButton{
+    margin:0 auto;
+    margin-top: 15px;
+    background-color: forestgreen;
+    color:white;
+    width:50%;
+    border: none;
+    font-size: 25px;
+    height: 40px;
+    border-radius: 3px ;
+}
+.signUpForm{
+    display: flex;
+    flex-direction: column;
+    column-gap: 15px;
+}
+
+.exit:hover{
+    color:red;
+}
+.mainPage{
+
+}
+.filter{
+    width:416px;
+    height: 710px;
+    background-color: #EFEEF6;
+    padding: 48px 0 40px 160px;
+    position: absolute;
+    left:0;
+}
+.filter ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap:23px;
+    text-align: left;
+}
+.filter ul li{
+    color:#5C6A79;
+    font-size:17px;
+}
+.active{
+    color:#1C2A39;
+    font-size: 19px;
+    font-weight: bold;
+}
+.mainProduct{
+    min-width:360px;
+    max-width: 360px;
+}
+.mainProductImageMask{
+    min-height: 260px;
+    max-height: 260px;
+    min-width: 360px;
+    max-width: 360px;
+    background-color: white;
+    cursor: pointer;
+    -webkit-box-shadow: 2px 13px 40px -17px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 13px 40px -17px rgba(0,0,0,0.75);
+    box-shadow: 2px 13px 40px -17px rgba(0,0,0,0.75);
+}
+.mainProductImage{
+    width:100%;
+}
+.mainPageProducts{
+    margin-left:400px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+.mainPageProducts .mainProductInfo h2{
+    font-size: 18px;
+    text-transform: uppercase;
+
+
+}
+.mainProduct{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.mainProductInfo{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    height: 100%;
+    margin-top: 20px;
+    text-align: left;
+}
+.mainProductName{
+    height:40px;
+    width:100%;
+    text-align: center;
+    cursor: pointer;
+}
+.addToCart{
+    height: 35px;
+    border: 1px solid #4C3DB2;
+    background:none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    color:#4C3DB2;
+    cursor: pointer;
+    width:100%
+}
+.price{
+    font-size: 18px;
+    font-weight: bold;
+}
+.description{
+    height: 50px;
+}
+.productView{
+    display: flex;
+    min-height: 450px;
+    max-height: 450px;
+}
+.bigPictureMask{
+     flex-basis: 630px;
+     -webkit-box-shadow: 2px 13px 40px -17px rgba(0,0,0,0.75);
+     -moz-box-shadow: 2px 13px 40px -17px rgba(0,0,0,0.75);
+     box-shadow: 2px 13px 40px -17px rgba(0,0,0,0.75);
+     margin-right: 18px;
+ }
+.bigPictureMask img{
+    width:100%
+}
+.productViewInfo{
+    flex-basis: 480px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cart, .order , .ordersInfoProducts{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.cartItem , .orderItem, .orderInfoProduct{
+    display: flex;
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+}
+.cartItemInfo, .orderItemInfo ,.orderInfoProductsInfo{
+    display: flex;
+    margin-left:50px;
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: space-between;
+}
+.cartItem img ,.orderItem img{
+    width:300px;
+}
+.cart .addToCart{
+    margin-top:20px;
+}
+.orderInfoItem{
+    display: flex;
+    border:1px solid black;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+.orderInfoItem p{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.orderInfoItem .addToCart{
+    width:100px
+}
+.orders{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.orderInfoProduct{
+    display: flex;
+}
+.orderInfoProduct img{
+    display: flex;
+    width:300px;
+}
