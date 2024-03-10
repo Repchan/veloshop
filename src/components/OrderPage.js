@@ -2,7 +2,9 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from 'react-router-dom';
+import {useActions} from "../hooks/useActions";
 const OrderPage = () => {
+    const {deleteFromCart} = useActions()
     const history = useNavigate();
     const location = useLocation();
     const cartArr = location?.state?.cartArr || [];
@@ -116,6 +118,7 @@ const OrderPage = () => {
         addOrder()
         addOrderItem()
         removeFromCart()
+        deleteFromCart()
         history("/")
     }
     return (

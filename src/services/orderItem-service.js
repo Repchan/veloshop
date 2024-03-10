@@ -62,8 +62,6 @@ class OrderItemService {
             });
         });
     }
-
-    // Другие методы по необходимости...
 }
 
 module.exports = OrderItemService;

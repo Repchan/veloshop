@@ -42,6 +42,7 @@ const ProductView = (props)=>{
                 <p>{object.Description}</p>
                 <p>Бренд: <b>{object.Brand}</b></p>
                 <p>Колір: <b>{object.Color}</b></p>
+                <p>Категорія: <b>{object.Type}</b></p>
                 <p>Кількість на складі: <b>{object.QuantityInStock}</b></p>
                 <p className={'price'}>{object.Price}₴</p>
                 <button className={"addToCart"} onClick={() => handleClick(object)}>

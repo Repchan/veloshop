@@ -32,7 +32,7 @@ const LogIn = (props)=> {
                 if (response.ok) {
                     const data = await response.json();
                     if (data.Password === formData.Password) {
-                        const authData = {login:formData.Username,password:formData.Password,auth:true,customerID:data.UserID};
+                        const authData = {login:formData.Username,password:formData.Password,auth:true,customerID:data.UserID,Role:data.Role};
                         localStorage.setItem("authData",JSON.stringify(authData));
                         setAuthorized(true)
 

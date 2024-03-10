@@ -269,3 +269,6 @@ header .container .navigation .navigationHeaderList{
     display: flex;
     width:300px;
 }
+.filter ul li{
+    cursor: pointer;
+}

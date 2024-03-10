@@ -3,11 +3,13 @@ import responseToLocal from "../functions/ResponseToLocal";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 const UserAccount = (props) => {
     const [username , setUsername] = useState({name:""})
+    const [role,setRole] = useState({role:''})
     useEffect(()=>{
         const checkLocalData = async ()=>{
             const data = await responseToLocal();
             if(data!== undefined){
                 setUsername({name:data.login});
+                setRole({role:data.Role})
             }
             else setUsername("")
 
@@ -24,7 +26,7 @@ const UserAccount = (props) => {
     return (
         <div>
                 <div className={'userAuth'}>
-                    <p>{username.name}</p>
+                    <p><Link to={role.role === 'Admin'?'/admin':"/user"}>{username.name}</Link></p>
                     <p onClick={handleClickExit} className={"exit"}>Выйти</p>
                 </div>
         </div>

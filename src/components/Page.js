@@ -11,7 +11,12 @@ import OrderPage from "./OrderPage";
 import Orders from "./Orders";
 import OrderInfo from "./OrderInfo";
 import ProductView from "./ProductView";
+import {useSelector} from "react-redux";
+import {useActions} from "../hooks/useActions";
+import AdminPanel from "./AdminPanel";
 const Page = (props) => {
+    const {addToCart} = useActions()
+    const cartData = useSelector(state => state.cart.cartData)
     const [authorized,setAuthorized] = useState(false)
     useEffect(()=>{
         const checkLocalData = async()=>{
@@ -21,6 +26,7 @@ const Page = (props) => {
             }
         }
         checkLocalData()
+
     })
     return (
         <Router>
@@ -34,7 +40,7 @@ const Page = (props) => {
                             <ul className={'navigationHeaderList'}>
                                 <li><Link to={'/'}>Товари</Link></li>
                                 <li>Контакти</li>
-                                <li><Link to={'/cart'}>Корзина</Link></li>
+                                <li><Link to={'/cart'}>Корзина - {cartData.length}</Link></li>
                                 <li><Link to={`/orders`}>Замовленя</Link></li>
                             </ul>
                         </div>
@@ -58,6 +64,7 @@ const Page = (props) => {
                             <Route path="/signIn" element={<LogIn />} />
                             <Route path={"/cart"} element={<Cart/>}/>
                             <Route path={"/orders"} element={<Orders/>}/>
+                            <Route path={"/admin"} element={<AdminPanel/>}/>
                         </Routes>
                     </div>
                 </div>
