@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import responseToLocal from "../functions/ResponseToLocal";
-import { useNavigate } from 'react-router-dom';
+import {Navigate} from 'react-router-dom';
+
 const LogIn = (props)=> {
-    const history = useNavigate();
+
     const [formData, setData] = useState({
         Username: '',
         Password: ''
@@ -23,7 +24,7 @@ const LogIn = (props)=> {
             [e.target.name]: e.target.value
         })
     }
-    const handleSubmit =  (e) => {
+    const handleSubmit =  async (e) => {
         e.preventDefault();
 
         const fetchData = async () => {
@@ -35,7 +36,6 @@ const LogIn = (props)=> {
                         const authData = {login:formData.Username,password:formData.Password,auth:true,customerID:data.UserID,Role:data.Role};
                         localStorage.setItem("authData",JSON.stringify(authData));
                         setAuthorized(true)
-
                     } else {
                         return console.log("Неверный пароль")
                     }
@@ -47,10 +47,8 @@ const LogIn = (props)=> {
             }
 
         }
-        fetchData();
-        setTimeout(() => {
-            window.location.reload();
-        }, 1000);
+        await fetchData();
+        window.location.reload();
     }
         return (
             <div>
@@ -65,13 +63,11 @@ const LogIn = (props)=> {
                         <input type="text" name="Password" className={"formInput"} value={formData.Password} onChange={handleChange} placeholder={"Ваш пароль"}  required />
                     </label>
 
-                    <button type="submit" className={"submitButton"}>Войти</button>
+                        <button type="submit" className={"submitButton"}>Войти</button>
                 </form>
 
                     ):(
-                        <div className={"qwe"}>
-                            <p>Вход успешно выполнен</p>
-                        </div>
+                        <Navigate to={'/'}></Navigate>
                 )}
             </div>
         )

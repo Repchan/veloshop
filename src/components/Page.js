@@ -13,7 +13,9 @@ import OrderInfo from "./OrderInfo";
 import ProductView from "./ProductView";
 import {useSelector} from "react-redux";
 import {useActions} from "../hooks/useActions";
-import AdminPanel from "./AdminPanel";
+import AdminPanel from "./Admin/AdminPanel";
+import UserPanel from "./UserPanel";
+import AddNewProduct from "./Admin/AddNewProduct";
 const Page = (props) => {
     const {addToCart} = useActions()
     const cartData = useSelector(state => state.cart.cartData)
@@ -65,6 +67,8 @@ const Page = (props) => {
                             <Route path={"/cart"} element={<Cart/>}/>
                             <Route path={"/orders"} element={<Orders/>}/>
                             <Route path={"/admin"} element={<AdminPanel/>}/>
+                            <Route path={`/user`} element={<UserPanel/>}/>
+                            <Route path={'/admin/addnewproduct'} element={<AddNewProduct/>}></Route>
                         </Routes>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import responseToLocal from "../functions/ResponseToLocal";
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Link, redirect} from 'react-router-dom';
+
 const UserAccount = (props) => {
     const [username , setUsername] = useState({name:""})
     const [role,setRole] = useState({role:''})
@@ -27,7 +28,7 @@ const UserAccount = (props) => {
         <div>
                 <div className={'userAuth'}>
                     <p><Link to={role.role === 'Admin'?'/admin':"/user"}>{username.name}</Link></p>
-                    <p onClick={handleClickExit} className={"exit"}>Выйти</p>
+                    <p onClick={handleClickExit} className={"exit"}><Link to={`/signIn`}>Выйти</Link></p>
                 </div>
         </div>
     );

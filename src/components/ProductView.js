@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from "react";
 import {useLocation} from "react-router-dom";
 
+
 const ProductView = (props)=>{
     const location = useLocation();
     const object = location?.state?.object || [];

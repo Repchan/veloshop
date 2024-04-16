@@ -32,9 +32,9 @@ class ProductService {
 
     addProduct(productData) {
         return new Promise((resolve, reject) => {
-            const { Name, Brand, Type, Color, Price, QuantityInStock, Category, StoreID,Description,ShortDescription} = productData;
-            const query = 'INSERT INTO Product (Name, Brand, Type, Color, Price, QuantityInStock, Category, StoreID,Description,ShortDescription) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?)';
-            this.connection.query(query, [Name, Brand, Type, Color, Price, QuantityInStock, Category, StoreID,Description,ShortDescription], (error, results, fields) => {
+            const { Name, Brand, Type, Color, Price, QuantityInStock, Category, StoreID, ProductImage, Description, ShortDescription} = productData;
+            const query = 'INSERT INTO Product (Name, Brand, Type, Color, Price, QuantityInStock, Category, StoreID, ProductImage, Description, ShortDescription) VALUES (?, ?, ?, ?, ?, ?, ?,?, ?,?,?)';
+            this.connection.query(query, [Name, Brand, Type, Color, Price, QuantityInStock, Category, StoreID, ProductImage, Description, ShortDescription], (error, results, fields) => {
                 if (error) {
                     reject(error);
                     return;
