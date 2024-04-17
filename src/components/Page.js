@@ -16,6 +16,7 @@ import {useActions} from "../hooks/useActions";
 import AdminPanel from "./Admin/AdminPanel";
 import UserPanel from "./UserPanel";
 import AddNewProduct from "./Admin/AddNewProduct";
+import RemoveProduct from "./Admin/RemoveProduct";
 const Page = (props) => {
     const {addToCart} = useActions()
     const cartData = useSelector(state => state.cart.cartData)
@@ -69,6 +70,7 @@ const Page = (props) => {
                             <Route path={"/admin"} element={<AdminPanel/>}/>
                             <Route path={`/user`} element={<UserPanel/>}/>
                             <Route path={'/admin/addnewproduct'} element={<AddNewProduct/>}></Route>
+                            <Route path={'/admin/removeproduct'} element ={<RemoveProduct/>}></Route>
                         </Routes>
                     </div>
                 </div>

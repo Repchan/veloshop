@@ -60,7 +60,7 @@ const LogIn = (props)=> {
                     </label>
                     <label>
 
-                        <input type="text" name="Password" className={"formInput"} value={formData.Password} onChange={handleChange} placeholder={"Ваш пароль"}  required />
+                        <input type="password" name="Password" className={"formInput"} value={formData.Password} onChange={handleChange} placeholder={"Ваш пароль"}  required />
                     </label>
 
                         <button type="submit" className={"submitButton"}>Войти</button>

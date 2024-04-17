@@ -174,7 +174,7 @@ router.put('/:id', async (req, res) => {
  *         description: Товар успешно удален
  */
 
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const result = await productService.deleteProduct(req.params.id);
         res.json(result);

@@ -23,7 +23,8 @@ const AdminPanel = (props) =>{
                     <h2>Список функций</h2>
                     <ul>
                         <li><Link to={'/admin/addnewproduct'}>Добавление нового товара</Link></li>
-                        <li>Удаление товара</li>
+                        <li><Link to={'/admin/removeproduct'}>Удаление товара</Link></li>
+                        <li>Обновление информации про товар</li>
                         <li>Просмотр заказов</li>
                         <li>Просмотр пользователей</li>
                     </ul>
