@@ -18,18 +18,34 @@ import UserPanel from "./UserPanel";
 import AddNewProduct from "./Admin/AddNewProduct";
 import RemoveProduct from "./Admin/RemoveProduct";
 const Page = (props) => {
-    const {addToCart} = useActions()
     const cartData = useSelector(state => state.cart.cartData)
-    const [authorized,setAuthorized] = useState(false)
+    const [authorized,setAuthorized] = useState(false);
+    const [id, setId] = useState();
+    const [cartLength,setCartLength] = useState();
     useEffect(()=>{
         const checkLocalData = async()=>{
             const data = await responseToLocal();
             if(data!==undefined){
                 setAuthorized(true)
+                setId(data.customerID)
             }
         }
-        checkLocalData()
 
+        const fetchCart = async (id) =>{
+            if (id !== undefined) {
+                const response = await fetch(`http://localhost:3000/cart/customer/${id}`);
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(data)
+                    setCartLength(data.length)
+                } else {
+                    console.log("Error: " + response.status);
+                }
+            }
+        }
+
+        checkLocalData()
+        fetchCart(id)
     })
     return (
         <Router>
@@ -43,7 +59,7 @@ const Page = (props) => {
                             <ul className={'navigationHeaderList'}>
                                 <li><Link to={'/'}>Товари</Link></li>
                                 <li>Контакти</li>
-                                <li><Link to={'/cart'}>Корзина - {cartData.length}</Link></li>
+                                <li><Link to={'/cart'}>Корзина - {cartLength}</Link></li>
                                 <li><Link to={`/orders`}>Замовленя</Link></li>
                             </ul>
                         </div>
